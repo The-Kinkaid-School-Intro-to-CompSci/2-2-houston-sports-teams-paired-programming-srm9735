@@ -83,18 +83,18 @@ const DASH = {
     ]
 }
 
-const FRUITS = [
-    {name: "apple", color: "red", shape: "round", emoji: "🍎"},
-    {name: "banana", color: "yellow", shape: "curved", emoji: "🍌"},
-    {name: "orange", color: "orange", shape: "round", emoji: "🍊"},
-    {name: "kiwi", color: "brown", shape: "oval", emoji: "🥝"},
-    {name: "mango", color: "yellow", shape: "oval", emoji: "🥭"}
-]
+// const FRUITS = [
+//     {name: "apple", color: "red", shape: "round", emoji: "🍎"},
+//     {name: "banana", color: "yellow", shape: "curved", emoji: "🍌"},
+//     {name: "orange", color: "orange", shape: "round", emoji: "🍊"},
+//     {name: "kiwi", color: "brown", shape: "oval", emoji: "🥝"},
+//     {name: "mango", color: "yellow", shape: "oval", emoji: "🥭"}
+// ]
 
-/**
- * A function to clear all cards from a container
- * @param {string} containerID - the ID of the container to clear
- */
+// /**
+//  * A function to clear all cards from a container
+//  * @param {string} containerID - the ID of the container to clear
+//  */
 function clearCards(containerID) {
     let container = document.querySelector(containerID);
     while(container.firstChild) {
@@ -103,132 +103,164 @@ function clearCards(containerID) {
 }
 
 
-/***************************************** Fruit Filtering: Step 0 */
+// /***************************************** Fruit Filtering: Step 0 */
 
-/**
- * NO NEED TO MODIFY; you can minimize this section
- * @param {object} fruit - a fruit to add a card for
- */
-function addFruitCard(fruit) {
-    let newFruitCard = document.createElement('div');
-    //adding the heading
-    let fruitHeading = document.createElement('h3');
-    fruitHeading.textContent = fruit.name;
-    newFruitCard.appendChild(fruitHeading);
+// /**
+//  * NO NEED TO MODIFY; you can minimize this section
+//  * @param {object} fruit - a fruit to add a card for
+//  */
+// function addFruitCard(fruit) {
+//     let newFruitCard = document.createElement('div');
+//     //adding the heading
+//     let fruitHeading = document.createElement('h3');
+//     fruitHeading.textContent = fruit.name;
+//     newFruitCard.appendChild(fruitHeading);
 
-    //adding the color
-    let fruitColor = document.createElement('p');
-    fruitColor.textContent = `Color: ${fruit.color}`;
-    fruitColor.style.color = fruit.color;
-    newFruitCard.appendChild(fruitColor);
+//     //adding the color
+//     let fruitColor = document.createElement('p');
+//     fruitColor.textContent = `Color: ${fruit.color}`;
+//     fruitColor.style.color = fruit.color;
+//     newFruitCard.appendChild(fruitColor);
 
-    //adding the shape
-    let fruitShape = document.createElement('p');
-    fruitShape.textContent = `Shape: ${fruit.shape}`;
-    newFruitCard.appendChild(fruitShape);
+//     //adding the shape
+//     let fruitShape = document.createElement('p');
+//     fruitShape.textContent = `Shape: ${fruit.shape}`;
+//     newFruitCard.appendChild(fruitShape);
 
-    //adding the emoji
-    let fruitEmoji = document.createElement('p');
-    fruitEmoji.textContent = `Emoji: ${fruit.emoji}`;
-    newFruitCard.appendChild(fruitEmoji);
+//     //adding the emoji
+//     let fruitEmoji = document.createElement('p');
+//     fruitEmoji.textContent = `Emoji: ${fruit.emoji}`;
+//     newFruitCard.appendChild(fruitEmoji);
     
-    let fruitContainer = document.querySelector("#fruitCardsContainer");
-    newFruitCard.classList.add('fruitCard');
-    fruitContainer.appendChild(newFruitCard);
-}
+//     let fruitContainer = document.querySelector("#fruitCardsContainer");
+//     newFruitCard.classList.add('fruitCard');
+//     fruitContainer.appendChild(newFruitCard);
+// }
 
-/**
- * NO NEED TO MODIFY; you can minimize this section
- * @param {Array} fruits- the array of fruits to make cards for
- */
-function makeFruitCards(fruits) {
-    clearCards("#fruitCardsContainer");
-    for(const fruit of fruits) {
-        addFruitCard(fruit);
-    }
-}
-
-
-function isFruitYellow(fruit) {
-    //TODO: Step 0D -- you fill in this function. 
-    //It should return true if the fruit is yellow.
-}
-
-function filterYellowFruits() {
-    //TODO: Step 0C -- you fill in this function
-}
-
-/**
- * An example function to check if a fruit is round
- * @param {object} fruit - a fruit to check if it is round
- * @returns {boolean} true if the fruit is round
- */
-function isFruitRound(fruit) {
-    if(fruit.shape === "round") {
-        return true;
-    }
-    return false;
-}
-
-/**
- * An example function to filter the fruits by roundness.
- */
-function filterRoundFruits() {
-    let roundFruits = [];
-    for(const fruit of FRUITS) {
-        //if the fruit is round
-        if(isFruitRound(fruit)) {
-            //add the fruit to the new list
-            roundFruits.push(fruit);
-        }
-    }
-    //make the fruit cards with the smaller list
-    makeFruitCards(roundFruits);
-}
+// /**
+//  * NO NEED TO MODIFY; you can minimize this section
+//  * @param {Array} fruits- the array of fruits to make cards for
+//  */
+// function makeFruitCards(fruits) {
+//     clearCards("#fruitCardsContainer");
+//     for(const fruit of fruits) {
+//         addFruitCard(fruit);
+//     }
+// }
 
 
 
-function fruitFiltering() {
-    makeFruitCards(FRUITS);
 
-    //make a button to filter the fruits by roundness
-    const fruitRoundButton = document.createElement('button');
-    fruitRoundButton.textContent = "Filter Round Fruits";
-    fruitRoundButton.addEventListener('click', filterRoundFruits);
+// /**
+//  * An example function to check if a fruit is round
+//  * @param {object} fruit - a fruit to check if it is round
+//  * @returns {boolean} true if the fruit is round
+//  */
+// function isFruitRound(fruit) {
+//     if(fruit.shape === "round") {
+//         return true;
+//     }
+//     return false;
+// }
 
-    //Step 0A: Make a button to filter the fruits if they are yellow
+// /**
+//  * An example function to filter the fruits by roundness.
+//  */
+// function filterRoundFruits() {
+//     let roundFruits = [];
+//     for(const fruit of FRUITS) {
+//         //if the fruit is round
+//         if(isFruitRound(fruit)) {
+//             //add the fruit to the new list
+//             roundFruits.push(fruit);
+//         }
+//     }
+//     //make the fruit cards with the smaller list
+//     makeFruitCards(roundFruits);
+// }
 
-    //select the container for the buttons
-    const buttonsContainer = document.querySelector("#fruitButtonsContainer");
-    //add the button to the container
-    buttonsContainer.appendChild(fruitRoundButton);
-    //Step 0B: Add the button to the container, similar to the line above
 
-}
-/***************************************** End Fruit Filtering: Step 0 */
+
+// function fruitFiltering() {
+//     makeFruitCards(FRUITS);
+
+//     //make a button to filter the fruits by roundness
+//     const fruitRoundButton = document.createElement('button');
+//     const yellowButton = document.createElement('button');
+//     yellowButton.textContent = "Yellow Fruits"
+//     yellowButton.addEventListener('click', filterByColor);
+//     fruitRoundButton.textContent = "Filter Round Fruits";
+//     fruitRoundButton.addEventListener('click', filterRoundFruits);
+
+//     //Step 0A: Make a button to filter the fruits if they are yellow
+
+//     //select the container for the buttons
+//     const buttonsContainer = document.querySelector("#fruitButtonsContainer");
+//     //add the button to the container
+    
+//     buttonsContainer.appendChild(fruitRoundButton);
+//     buttonsContainer.appendChild(yellowButton);
+//     //Step 0B: Add the button to the container, similar to the line above
+
+// }
+
+// function fruitYellow(fruit){
+//     if(fruit.color === "yellow") {
+//         return true;
+//     }
+//     return false;
+// }
+
+// function filterByColor () {
+//     // clearCards();
+//     let yellowFruits = []
+//     for (const fruit of FRUITS) {
+//         if (fruitYellow(fruit)){
+//             yellowFruits.push(fruit);
+//         }
+//     }
+//     console.log(yellowFruits);
+//     // for (const fruit of yellowFruits) {
+//     //     addFruitCard(fruit)
+//     // }
+//     makeFruitCards(yellowFruits);
+// }
+
+
+// /***************************************** End Fruit Filtering: Step 0 */
 
 
 /***************************************** Start Sports Filtering */
 
 function addPlayerCard(playerData){
+    console.log(playerData)
     let playerCard = document.createElement("div");
     playerCard.classList.add("playerCard");
 
     //make a new image
     let playerImage = document.createElement("img");
-    playerImage.src = '';
-    playerImage.alt = '' + " headshot";
+    playerImage.src = playerData.image;
+    playerImage.alt = playerData.name + " headshot";
     playerImage.width = 200;
 
     let playerName = document.createElement("h3");
     playerName.textContent = `Name: ${playerData.name}`;
     //make more paragraphs for the other player information
+    let playerJersey = document.createElement("p");
+    playerJersey.textContent = `Jersey Number: ${playerData.jerseyNumber}`;
+    let playerHeight = document.createElement("p");
+    playerHeight.textContent = `Height: ${playerData.height}`;
+    let playerPosition = document.createElement("p");
+    playerPosition.textContent = `Position: ${playerData.position}`;
 
 
 
     //append the player information to the player 'card'
     playerCard.appendChild(playerImage);
     playerCard.appendChild(playerName);
+    playerCard.appendChild(playerJersey);
+    playerCard.appendChild(playerHeight);
+    playerCard.appendChild(playerPosition);
 
     //append the player card to the player cards container
     let playerCardsContainer = document.querySelector("#playerCardsContainer");
@@ -241,6 +273,10 @@ function setPlayerCards(players){
     clearCards("#playerCardsContainer");
 
     // Step 4B: Loop through the players and add a card for each player
+    for (const player of players) {
+        addPlayerCard(player);
+
+    }
 
 }
 
@@ -252,12 +288,15 @@ function updateTeamInfo(teamData){
     //update the team logo
     let teamLogo = document.querySelector("#teamLogo");
     //Step 2A: Update the team logo by setting it's source
-    teamLogo.src = '';
-    teamLogo.alt = '';
+    teamLogo.src = teamData.logo;
+    teamLogo.alt = 'Astros Logo';
     teamLogo.width = 200;
 
     //Step 2B: Create a paragraph element with the team's sport and append it as a child to the team info container (id="teamInfoContainer")
-
+    let baseball = document.createElement("p");
+    let teamInfo = document.querySelector('#teamInfoContainer');
+    baseball.textContent = teamData.sport;
+    teamInfo.appendChild(baseball);
 }
 
 /**
@@ -268,6 +307,8 @@ function updateTeamInfo(teamData){
 function isGreaterThan15(player){
     return Number(player.jerseyNumber) > 15;
 }
+
+
 
 /**
  * An example function for filtering players by jersey number greater than 15
@@ -298,6 +339,8 @@ function filterPlayers(filterValue, players){
     else if(filterValue === "greaterThan15"){
         filterbyGreaterThan15(players);
     }
+
+
 }
 
 /***************************************** End Sports Filtering */
@@ -307,32 +350,31 @@ function runProgram() {
     console.log("Program is running");
 
     //STEP 0: filter the  -- practice
-    fruitFiltering();
 
     //STEP 1A: get the team data of the team of your choice (ASTROS or DASH)
-    // let teamData = DASH;
+    let teamData = ASTROS;
 
     // STEP 1B: log the team data and look at the arrays. How is the information about the team arranged?
-    // console.log("Team data: ", teamData);
+    console.log("Team data: ", teamData);
 
 
     // STEP 2: update the team information
-    // updateTeamInfo(teamData);
+    updateTeamInfo(teamData);
 
     //STEP 3: Finish making a card for a single player
-    // let players = teamData.players;
-    // let firstPlayer = players[0];
-    // addPlayerCard(firstPlayer);
+    let players = teamData.players;
+    let firstPlayer = players[0];
+    addPlayerCard(firstPlayer);
 
     //STEP 4: Loop through the players and add a card for each player
-    setPlayerCards(/**. Step 4A: pass in array of players */);
+    setPlayerCards(players);
 
     //STEP 5: Filter the players 
-    // let playerFilter = document.querySelector("#playersFilter");
-    // playerFilter.addEventListener("change", (event) => {
+    let playerFilter = document.querySelector("#playersFilter");
+    playerFilter.addEventListener("change", (event) => {
 
-    //     filterPlayers(event.target.value, teamData.players);
-    // });
+        filterPlayers(event.target.value, teamData.players);
+    });
 
 }
 
